@@ -1,7 +1,7 @@
 # Variables
 CXX := clang++
 # Comment the next line to remove parallelism
-CXXFLAGS := -Iinclude -Wall -Wextra -std=clang++17 -O3 -fopencilk
+CXXFLAGS := -Iinclude -Wall -Wextra -std=c++17 -O3 -fopencilk
 # Comment the next line for sequencial execution
 #CXXFLAGS := -Iinclude -Wall -Wextra -std=c++17 -O3
 SRC_DIR := src
