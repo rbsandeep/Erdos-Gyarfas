@@ -10,3 +10,5 @@ Steps to compile:
 `make clean && make`
 
 Usage: ./out/a.out <t>
+
+Contributors: Anand Hegde, R. B. Sandeep, and P. Shashank.
