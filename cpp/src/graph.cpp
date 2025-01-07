@@ -171,7 +171,8 @@ bool Graph::has_forbidden_cycle() {
     /* Returns true if the graph has a cycle of length a power of 2.
        Returns false otherwise. */
     int t = 4;
-    while(t <= n) {
+    while (t <= std::min(n, 8))
+    {
         if (!is_ct_free(t)) {
             return true;
         }
@@ -185,7 +186,7 @@ bool Graph::has_forbidden_cycle_having(int u, int v) {
        having the edge {u,v}.
        Returns false otherwise. */
     int t = 4;
-    while(t <= n) {
+    while(t <= std::min(n, 8)) {
         if (!is_ct_free_special(t, u, v)) {
             return true;
         }
@@ -238,7 +239,17 @@ void Graph::init_safe_neighbors(std::vector<int>& safe_neighbors) {
             remove_edge(n-1, i);
         }
     }
-} 
+}
+
+bool Graph::degree_doesnt_exceed_three()
+{
+    for (int i = 0; i < n; i++) {
+        if (nodes[i].size() > 3) {
+            return false;
+        }
+    }
+    return true;
+}
 
 bool Graph::update_next_safe_neighbors(std::vector<int>& cur_safe_neighbors) {
     /* Finds the 'next' list of neighbors of the last node (with index n-1) such that adding them does not result in a forbidden cycle.
@@ -249,9 +260,10 @@ bool Graph::update_next_safe_neighbors(std::vector<int>& cur_safe_neighbors) {
        If no next set of potential neighbors are found, then return false. */
     while (get_next_neighbors(cur_safe_neighbors)) {
         add_edges(cur_safe_neighbors);
-        if (!has_forbidden_cycle()) {
+        if (!has_forbidden_cycle() && degree_doesnt_exceed_three())
+        {
             return true;
-        } 
+        }
         remove_edges(cur_safe_neighbors);
     }
     return false;
@@ -271,12 +283,15 @@ int Graph::get_highest_incomplete_node() {
 }
 
 void Graph::print_graph() {
-    for (auto node : nodes) {
-        std::cout << node.first << ": ";
-        for (auto neighbor : node.second) {
-            std::cout << neighbor << " ";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if( nodes[i].find(j) != nodes[i].end() ) {
+                std::cout << "1 ";
+            } else {
+                std::cout << "0 ";
+            }
         }
-        std::cout << "\n";
+        std::cout << std::endl;
     }
+    std::cout << "\n\n\n\n";
 }
-

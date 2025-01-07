@@ -30,6 +30,7 @@ public:
     bool is_ct_free(int t);
     bool is_ind_pk_free();
     void print_graph();
+    bool degree_doesnt_exceed_three();
 
     int get_degree(int node);
     bool update_next_safe_neighbors(std::vector<int>& cur_safe_neighbors);
