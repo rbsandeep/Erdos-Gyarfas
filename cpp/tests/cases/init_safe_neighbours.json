@@ -1,0 +1,14 @@
+[
+    {
+        "description": "path graph of length 5",
+        "edges": [[0, 1], [1, 2], [2, 3], [3, 4]],
+        "anchor_node": 3,
+        "safe_neighbors": [0, -1, 0, -1]
+    },
+    {
+        "description": "Graph with 7 vertices. Anchor node is not n - 1th node.",
+        "edges": [[0, 1], [1, 2], [3, 4], [1, 5], [4, 6], [2, 3], [4, 5], [0, 5]],
+        "anchor_node": 4,
+        "safe_neighbors": [-1, -1, -1, 0, -1, 0]
+    }
+]
