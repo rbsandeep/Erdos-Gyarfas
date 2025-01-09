@@ -27,16 +27,16 @@ public:
     void remove_edge(int node1, int node2);
     void remove_edges(std::vector<int> nodelist);
     void remove_node(int node);
-    bool is_ct_free(int t); // Done
-    bool is_ind_pk_free();  // Done
+    bool is_ct_free(int t);
+    bool is_ind_pk_free();
     void print_graph();
 
     int get_degree(int node);
-    bool update_next_safe_neighbors(std::vector<int> &cur_safe_neighbors); // yet to do
+    bool update_next_safe_neighbors(std::vector<int> &cur_safe_neighbors);
     int get_highest_incomplete_node();
     bool has_forbidden_cycle();
     bool get_next_neighbors(std::vector<int> &cur_neighbors);
-    void init_safe_neighbors(std::vector<int> &safe_neighbors); // Done
+    void init_safe_neighbors(std::vector<int> &safe_neighbors);
 };
 
 #endif // GRAPH_H
