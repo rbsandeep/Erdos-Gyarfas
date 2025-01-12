@@ -14,7 +14,7 @@ int maxnode = 0;
    If such a graph is found, then it is printed.
 */
 void explore(Graph* graph, int anchor_node) {
-    int cap_nodes = 26;
+    int cap_nodes = 30;
     std::vector<int> safe_neighbors(graph->n-1, 0);
     safe_neighbors[anchor_node] = -1; // {n-1, anchor_node} is already an edge
     graph->init_safe_neighbors(safe_neighbors);
