@@ -208,3 +208,5 @@ cython_debug/
 
 log.txt
 graph.png
+
+.vscode
