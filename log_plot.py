@@ -43,10 +43,13 @@ assert actions, "Could not read log file!"
 
 root = nx.Graph()
 plt.clf()
+plt.figure(figsize=(10, 10))
 nx.draw(root, with_labels=True)
 plt.savefig(outputPath)
 
 currGraphs = []
+
+
 def handleKeyRelease(key):
     global actionIndex, currGraphs
     if key == Key.esc:
@@ -77,7 +80,8 @@ def handleKeyRelease(key):
         displayGraph = currGraphs[-1] if currGraphs else root
 
     plt.clf()
-    nx.draw(displayGraph, with_labels=True)
+    positions = nx.circular_layout(displayGraph.subgraph(set(displayGraph)))
+    nx.draw(displayGraph, with_labels=True, pos=positions)
     plt.savefig(outputPath)
 
 
