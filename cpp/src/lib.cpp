@@ -26,12 +26,19 @@ void explore(Graph* graph, int anchor_node) {
             }
             int new_node = graph->n;
             graph->add_node(new_node);
+            std::cout << "N " << new_node << "\n";
             graph->add_edge(new_node, next_anchor_node);
+            std::cout << "E " << new_node << " " <<next_anchor_node << "\n";
             explore(graph, next_anchor_node);
             graph->remove_node(new_node);
+            std::cout << "E " << new_node << " " <<next_anchor_node << "\n";
         } 
         graph->remove_edges(safe_neighbors);
+        graph->add_log_for_remove_edges(safe_neighbors);
         success = graph->update_next_safe_neighbors(safe_neighbors);
+        if(success){
+            graph->add_log_for_add_edges(safe_neighbors);
+        }
     }
 }
 
@@ -41,11 +48,14 @@ void explore(Graph* graph, int anchor_node) {
 */
 void validate_conjecture(int k) {
     Graph* g = new Graph(k);
+    std::cout << "k = " << k << "\n";
     for (int i = 0; i < k; i++) {
         g->add_node(i);
+        std::cout << "N " << i << "\n";
     }
     for (int i = 0; i < k - 1; i++) {
         g->add_edge(i, i+1);
+        std::cout << "E " << i << " " << i + 1 << "\n";
     }
     // Now g is a path on k vertices.
     explore(g, k-2); // k-2 to is the anchor node to which the last node (k-1) is attached. 

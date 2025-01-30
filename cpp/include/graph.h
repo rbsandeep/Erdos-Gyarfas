@@ -30,6 +30,8 @@ public:
     bool is_ct_free(int t);
     bool is_ind_pk_free();
     void print_graph();
+    void add_log_for_add_edges(const std::vector<int> safe_heighbors);
+    void add_log_for_remove_edges(const std::vector<int> safe_heighbors);
 
     int get_degree(int node);
     bool update_next_safe_neighbors(std::vector<int> &cur_safe_neighbors);

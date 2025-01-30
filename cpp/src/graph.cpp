@@ -1,33 +1,23 @@
 #include <iostream>
 
 #include "graph.h"
-#define DEBUG
 
 Graph::Graph(int k) {
     // Constructor
     this->k = k;
     this->n = 0;
-    #ifdef DEBUG
-        std::cout << "k = " << k << "\n";
-    #endif
 }
 
 void Graph::add_node(int node) {
     // Adds a node to the graph
     nodes[node] = std::set<int>();
     n++;
-    #ifdef DEBUG
-        std::cout << "N " << node << "\n";
-    #endif
 }
 
 void Graph::add_edge(int node1, int node2) {
     // Adds an edge between two nodes
     nodes[node1].insert(node2);
     nodes[node2].insert(node1);
-    #ifdef DEBUG
-        std::cout << "E " << node1 << " " <<node2 << "\n";
-    #endif
 }
 
 void Graph::remove_node(int node) {
@@ -47,7 +37,7 @@ void Graph::remove_edge(int node1, int node2) {
     nodes[node1].erase(node2);
     nodes[node2].erase(node1);
     #ifdef DEBUG
-        std::cout << "e " << node1 << " " <<node2 << "\n";
+        
     #endif
 }
 
@@ -58,11 +48,24 @@ void Graph::add_edges(std::vector<int> hitlist) {
         if(hitlist[i] == 1) {
             nodes[n-1].insert(i);
             nodes[i].insert(n-1);
-            #ifdef DEBUG
-                std::cout << "E " << n-1 << " " << i << "\n";
-            #endif
         }
     }   
+}
+
+void Graph::add_log_for_add_edges(std::vector<int> hitlist){
+    for(int i=0; i<n-1; i++) {
+        if(hitlist[i] == 1) {
+            std::cout << "E " << n-1 << " " << i << "\n";
+        }
+    }
+}
+
+void Graph::add_log_for_remove_edges(std::vector<int> hitlist){
+    for(int i=0; i<n-1; i++) {
+        if(hitlist[i] == 1) {
+            std::cout << "e " << n-1 << " " << i << "\n";
+        }
+    }
 }
 
 void Graph::remove_edges(std::vector<int> hitlist) {
