@@ -31,7 +31,7 @@ void explore(Graph* graph, int anchor_node) {
             std::cout << "E " << new_node << " " <<next_anchor_node << "\n";
             explore(graph, next_anchor_node);
             graph->remove_node(new_node);
-            std::cout << "E " << new_node << " " <<next_anchor_node << "\n";
+            std::cout << "n " << new_node << "\n";
         } 
         graph->remove_edges(safe_neighbors);
         graph->add_log_for_remove_edges(safe_neighbors);
