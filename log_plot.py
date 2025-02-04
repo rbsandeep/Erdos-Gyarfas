@@ -1,5 +1,7 @@
 import argparse
 import networkx as nx
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import os
 from pynput import keyboard

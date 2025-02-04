@@ -5,6 +5,6 @@
 # <todo: add the paper link>
 
 Steps to run:
-`make clean && make && ./out/a.out 6 0`
+`make clean && make && ./out/a.out 6`
 
 Usage: `./out/a.out <k>`
