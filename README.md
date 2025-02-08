@@ -1,18 +1,11 @@
-# Erdős-Gyárfás conjecture on graphs without long induced paths
+# Cilk based parallel implementation
 
-Here you can see two implementation of an algorithm
-to validate Erdős–Gyárfás conjecture on P_k-free graphs (graphs without any induced copies of a path on k vertices):
-every graph with minimum degree at least 3 has a cycle with length a power of 2.
-The algorithm can be found at this link: http://arxiv.org/abs/2410.22842
+This program is a parallel implementation of the algorithm in the following paper
+to prove that Erdős–Gyárfás conjecture is true for graphs without long induced paths.
 
-To prove that the conjecture is true for P_t-free graphs: run the program with a command line argument k, for 3 <= k <= t.
-If there is a counterexample of the required kind, the program will print the details.
+Steps to run:
+Please refer to https://cilk.mit.edu/download/ to install cilk.
 
-Steps to compile:
-`make clean && make`
+Inside `lib.cpp`, change the path of `cilk.h` based on your installation.
 
-Usage: `./out/a.out <t>`
-
-The above steps will build the serial implementation. For cilk based parallel implementation, please see the branch [cilk](https://github.com/rbsandeep/Erdos-Gyarfas/tree/cilk).
-
-Contributors: Anand Hegde, R. B. Sandeep, and P. Shashank.
+`make clean && make && ./out/a.out <k>`
