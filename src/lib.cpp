@@ -1,8 +1,9 @@
 #include <vector>
 #include <iostream>
+// Change the following path to the location of cilk.h
+#include "/home/sysad/customsoftware/opencilk_2_0_0/lib/clang/14.0.6/include/cilk/cilk.h"
 
 #include "graph.h"
-
 
 /* Let V = {0,1,...,n-1} be the set of vertices of graph.
    Let V' = {0,1,2,...,n-2} (i.e., V \ {n-1}).
@@ -27,12 +28,14 @@ void explore(Graph* graph, int anchor_node) {
             int new_node = graph->n;
             graph->add_node(new_node);
             graph->add_edge(new_node, next_anchor_node);
-            explore(graph, next_anchor_node);
+            Graph *gcopy = new Graph(graph);
+            cilk_spawn explore(gcopy, next_anchor_node);
             graph->remove_node(new_node);
         } 
         graph->remove_edges(safe_neighbors);
         success = graph->update_next_safe_neighbors(safe_neighbors);
     }
+    cilk_sync;
 }
 
 /* Validates Erdos-Gyarfas conjecture on graphs without any induced copies of P_k 

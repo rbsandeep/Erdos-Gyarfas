@@ -19,6 +19,7 @@ public:
     int n;
 
     Graph(int k);
+    Graph(Graph *g);
     std::set<int> get_neighbors(int node);
     void add_node(int node);
     void add_edge(int node1, int node2);

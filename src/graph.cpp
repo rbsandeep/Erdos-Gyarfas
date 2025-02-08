@@ -8,6 +8,14 @@ Graph::Graph(int k) {
     this->n = 0;
 }
 
+
+Graph::Graph(Graph* g) {
+    // Constructor
+    k = g->k;
+    n = g->n;
+    nodes = g->nodes; 
+}
+
 void Graph::add_node(int node) {
     // Adds a node to the graph
     nodes[node] = std::set<int>();
