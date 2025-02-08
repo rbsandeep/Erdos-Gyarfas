@@ -42,7 +42,7 @@ tests: $(TARGET) $(TEST_SRCS) | $(OUT_DIR)
 
 # Clean up generated files
 clean:
-	rm -rf $(OUT_DIR)/*.o $(TARGET)
+	rm -rf $(OUT_DIR)/*.o $(TARGET) $(OUT_DIR)/*.out
 
 # Phony targets
 .PHONY: all tests clean
