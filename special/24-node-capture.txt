@@ -1,0 +1,6 @@
+Follow the line number in 24-node-p18-free-logs.txt:
+
+markstroem.txt: log.txt, line 231
+24-node-cubic-no-4-8-cycles-p18-free.1.txt: log.txt, line 483
+24-node-cubic-no-4-8-cycles-p18-free.2.txt: log.txt, line 7
+24-node-cubic-no-4-8-cycles-p18-free.3.txt: log.txt, line 903
