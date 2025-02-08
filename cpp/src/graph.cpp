@@ -171,7 +171,7 @@ bool Graph::has_forbidden_cycle() {
     /* Returns true if the graph has a cycle of length a power of 2.
        Returns false otherwise. */
     int t = 4;
-    while(t <= n) {
+    while(t <= 8) {
         if (!is_ct_free(t)) {
             return true;
         }
@@ -185,7 +185,7 @@ bool Graph::has_forbidden_cycle_having(int u, int v) {
        having the edge {u,v}.
        Returns false otherwise. */
     int t = 4;
-    while(t <= n) {
+    while(t <= 8) {
         if (!is_ct_free_special(t, u, v)) {
             return true;
         }
