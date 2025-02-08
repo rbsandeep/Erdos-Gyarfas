@@ -50,6 +50,9 @@ The logs corresponding to **24-node cubic P-18 free** graphs are present in the 
 
 The graphs can be verified using `graph_test.py` python file, usage is self-explanatory
 
+![Generated Grpahs](./special/graphs.png)
+**Ref:** http://abel.math.umu.se/~klasm/Uppsatser/cycex.pdf
+
 # Contributors:
 
 Anand Hegde, R. B. Sandeep, and P. Shashank.
