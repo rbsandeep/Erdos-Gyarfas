@@ -40,6 +40,8 @@ make clean && make
 To test for different number of nodes (N) and different Pk-free values (P):
     1. Update value of N in ./cpp/lib.cpp, cap_nodes variable (and re-compile)
     2. Update value of P as command line argument: ./out/a.out <P>
+    3. To check for different cycles (not 4, 8) you can update
+        has_forbidden_cycle and has_forbidden_cycle_having funcitons in graph.cpp
 
 The graphs will be printed to stdout in adjacency matrix format, one after the other
 ```
