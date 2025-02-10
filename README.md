@@ -1,13 +1,10 @@
 # Overview
 
-Here you can see two implementations (one serial and one parallel) of an algorithm
-to validate Erdős–Gyárfás conjecture on P_k-free graphs (graphs without any induced copies of a path on k vertices):
-every graph with minimum degree at least 3 has a cycle with length a power of 2.
-The algorithm can be found at this link: http://arxiv.org/abs/2410.22842
+Please refer: http://arxiv.org/abs/2410.22842
 
 # Special Graphs Generation
 
-Additionally, this branch contains special graphs that do not have 4 to 8 cycles but contain 16 cycles. The modified algorithm successfully generated such graphs and reproduced four graphs from the paper that contains [Markstroem Graph](http://abel.math.umu.se/~klasm/Uppsatser/cycex.pdf).
+This branch contains special graphs that do not have 4 to 8 cycles but contain 16 cycles. The modified algorithm successfully generated such graphs and reproduced four graphs from the paper that contains [Markstroem Graph](http://abel.math.umu.se/~klasm/Uppsatser/cycex.pdf).
 
 These graphs a predominantly **24-node cubic graphs**, with one graph being **28-node cubic graph**, whose adj-matrix representaions are given in the `./special` directory
 
