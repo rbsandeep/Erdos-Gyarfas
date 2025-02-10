@@ -11,7 +11,7 @@ If there is a counterexample of the required kind, the program will print the de
 Steps to compile:
 `make clean && make`
 
-Usage: `./out/a.out <t>`
+Usage: `./out/a.out <k>`
 
 The above steps will build the serial implementation. For cilk based parallel implementation, please see the branch [cilk](https://github.com/rbsandeep/Erdos-Gyarfas/tree/cilk).
 
