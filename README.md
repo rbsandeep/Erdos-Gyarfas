@@ -1,14 +1,13 @@
-Here you can see two implementations (one serial and one parallel) of an algorithm 
-to validate Erdős–Gyárfás conjecture on P_k-free graphs (graphs without any induced copies of a path on k vertices): 
-every graph with minimum degree at least 3 has a cycle with length a power of 2.
-The algorithm can be found at this link: http://arxiv.org/abs/2410.22842
+For each input integer k >=3, the program checks whether there is a P_k-free, but having an induced P_{k-1}, 
+graph with minimum degree at least 3 such that
+every cycle of length a power of 2 has length at least 16 - i.e., there are no 4-cycle and no 8-cycle.
+The refer: http://arxiv.org/abs/2410.22842
 
-To prove that the conjecture is true for P_t-free graphs: run the program with a command line argument k, for 3 <= k <= t.
-If there is a counterexample of the required kind, the program will print the details.
+There are two implementations - sequential and parallel.
 
 Steps to compile:
 `make clean && make`
 
-Usage: ./out/a.out <t>
+Usage: ./out/a.out <k>
 
 Contributors: Anand Hegde, R. B. Sandeep, and P. Shashank.
